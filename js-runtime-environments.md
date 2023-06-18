@@ -16,7 +16,7 @@ Client Side JavaScript
   JS code 
 -----------
   Browser 
-  - JS engine (V8)
+  - JS engine (ex. V8)
   - Web API   
 ```
 
@@ -26,9 +26,9 @@ Client Side JavaScript
 : 브라우저 보안 정책으로 제약 존재 (운영체제 접근 어려움, SOP 등)  
 
 
-**호환성 문제**
+**호환성 문제**  
 : 브라우저마다 지원하는 JS 스펙이 달라 최신 문법 사용시 트랜스파일러를 통해 지원되는 문법으로 구문 변환 필요   
-: Chrome, Firefox, Edge 같은 브라우저는 자동으로 업데이트되는 에버그린 브라우저로 JS 스펙 호환성이 높음
+(Chrome, Firefox, Edge 같은 브라우저는 자동으로 업데이트되는 에버그린 브라우저로 JS 스펙 호환성이 높음)
 
 
 **호환성 확인**  
@@ -46,12 +46,12 @@ Server Side JavaScript
 ```
   JS code 
 -----------
-  JS engine (V8)
+  JS engine (ex. V8)
 ```
 
 
 **Rhino**  
-: 최초 서버 사이드 환경에서 실행하기 위해 만들어진 자바스크립트 엔진   
+: 서버 사이드 환경에서 실행하기 위해 만들어진 최초 자바스크립트 엔진   
 : JS로 작성된 코드를 java 객체에 전달    
 
 
