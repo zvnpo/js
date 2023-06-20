@@ -6,7 +6,7 @@
 
 
 
-### CSJS
+## CSJS
 Client Side JavaScript    
 : 클라이언트(브라우저) 측에서 실행되는 자바스크립트     
 : HTML, CSS 같은 클라이언트 측 컴포넌트 조작 가능   
@@ -37,7 +37,7 @@ https://kangax.github.io/compat-table/es6/
 
 
 
-### SSJS
+## SSJS
 Server Side JavaScript  
 : 서버 측에서 실행되는 자바스크립트  
 : 클라이언트와 서버의 간격을 없애기 위해 만들어짐  
@@ -57,13 +57,22 @@ Server Side JavaScript
 
 **SSJS solution**  
 - node
-- MongoDB
-- CouchDB
+- mongoDB
+- couchDB
 - ...
 
 
 **SSJS solution list**  
 https://en.wikipedia.org/wiki/List_of_server-side_JavaScript_implementations
+
+
+**js runtime** 
+
+런타임 | 엔진 | 언어 
+---|---|---
+node | v8 | c++
+deno | v8 | rust
+bun  | JavaScriptCore | zig
 
 
 
