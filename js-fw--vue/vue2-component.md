@@ -1,7 +1,7 @@
 # Vue2 Component
 
 
-**루트 컴포넌트 생성**
+**루트 컴포넌트**
 ```js
 import Vue from 'vue'
 import App from './App.vue' 
@@ -122,9 +122,6 @@ new Vue({
 
 
 **SFC**  
-Single File Component  
-: 번들러를 통해 컴포넌트로 컴파일됨  
-
 ```html
 <!-- ComponentName.vue -->
 <template>
@@ -279,5 +276,27 @@ new Vue({
     })
   },
 })
+</script>
+```
+
+
+
+## 함수형 컴포넌트
+
+```html
+<template functional>
+  <p>{{ props.key }}</p>
+</template>
+
+<script>
+export default {
+  props: {
+    key: 'value',
+  },
+
+  render(h, ctx) {
+    console.log(ctx.props.key)
+  }
+}
 </script>
 ```
