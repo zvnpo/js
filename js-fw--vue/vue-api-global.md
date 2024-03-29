@@ -74,7 +74,7 @@ app.config.optionMergeStrategies
 
 
 ## nextTick()
-: 반응형 데이터가 변경되어도 DOM에 바로 반영되지 않고 비동기적으로 업데이트되는데 nextTick 함수를 사용하면 DOM이 업데이트되는 순간을 포착할 수 있음
+: 반응형 데이터가 변경되면 DOM에 바로 반영되는게 아니라 비동기적으로 업데이트되는데 nextTick 함수를 사용하면 DOM이 업데이트되는 순간을 포착할 수 있음
 
 ```html
 <template>
@@ -101,6 +101,21 @@ const fnClick = () => {
 ## defineComponent()
 : vue 컴포넌트 정의시 타입 추론을 도와주는 함수  
 
+```html
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  props: {
+  },
+  data() {
+    return {
+    }
+  }
+});
+</script>  
+```
+
 
 
 ## defineAsyncComponent()
@@ -110,7 +125,7 @@ const fnClick = () => {
 import { defineAsyncComponent } from 'vue'
 
 const AsyncComponent = defineAsyncComponent(() => 
-  import('./components/MyComponent.vue')
+  import('./components/MyComponent.vue');
 });
 ```
 
@@ -129,5 +144,5 @@ const MyElement = defineCustomElement({
   styles: [],
 });
 
-customElements.define('my-element', MyElement)
+customElements.define('my-element', MyElement);
 ```
