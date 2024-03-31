@@ -15,10 +15,32 @@
 | $attrs     | 폴스루 속성 객체
 
 
+```html
+<template>
+  <p>{{ text }}</p>
+  <input type="text" v-model="text">
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      text : '',
+    }
+  },
+
+  created() {
+    console.log(this.$data.text);
+  },
+}
+</script>
+```
+
+
 
 ## Vue Instance Methods
 
-**$watch()**
+**$watch()**  
 : 감시자 생성 메소드  
 
 ```html
@@ -28,8 +50,6 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-
 export default {
   data() {
     return {
@@ -48,28 +68,10 @@ export default {
 ```
 
 
-
-**$emit()**
-: 현재 인스턴스에 커스텀 이벤트 트리거
+**$emit()**  
+: 부모 인스턴스의 커스텀 이벤트 트리거
 
 ```html
-<template>
-  <button @click="fnClick">button</button>
-</template>
-
-<script>
-export default {
-  created() {
-    this.$emit('fnClick');
-  },
-
-  methods: {
-    fnClick() {
-      console.log('click');
-    }
-  },
-}
-</script>
 ```
 
 
