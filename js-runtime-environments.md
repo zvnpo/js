@@ -43,33 +43,51 @@ Server Side JavaScript
 : 클라이언트와 서버의 간격을 없애기 위해 만들어짐  
 : Rhino, SpiderMonkey, V8 같은 독립적인 자바스크립트 엔진으로 실행  
 
+
 ```
   JS code 
 -----------
-  JS engine (ex. V8)
+  JS Runtime
+  - JS engine (ex. V8)
+  - Runtime API
+  - ... 
 ```
 
 
 **Rhino**  
 : 서버 사이드 환경에서 실행하기 위해 만들어진 최초 자바스크립트 엔진   
-: JS로 작성된 코드를 java 객체에 전달    
+: 자바스크립트로 작성된 코드를 자바 객체에 전달    
 
 
-**SSJS solution**  
-- node
+**SSJS Solution**  
 - mongoDB
 - couchDB
 - ...
 
 
-**SSJS solution list**  
+**SSJS Solution List**  
 https://en.wikipedia.org/wiki/List_of_server-side_JavaScript_implementations
 
 
-**SSJS runtime** 
+
+### JS Runtime
+: 자바스크립트 코드가 실행되는 환경  
 
 런타임 | 엔진 | 언어 | 출시
----|---|--- 
+---|---|---|--- 
 node | v8 | c++  | 2009, Ryan Dahl
 deno | v8 | rust | 2020, Ryan Dahl
 bun  | JavaScriptCore | zig | 2022, Jarred Sumner
+
+
+
+### JS Engine 
+: 자바스크립트 코드를 실행하는 프로그램  
+: 클라이언트라면 브라우저 안에 서버라면 런타임 안에 존재  
+
+- V8
+- SpiderMonkey
+- JavaScriptCore
+- ChakraCore
+- QuickJS
+- ... 
