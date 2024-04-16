@@ -15,9 +15,10 @@ Client Side JavaScript
 ```
   JS code 
 -----------
-  Browser 
-  - JS engine (ex. V8)
+  Browser (ex. chrome) 
+  - JS engine (ex. v8)
   - Web API   
+  - ...
 ```
 
 
@@ -43,12 +44,11 @@ Server Side JavaScript
 : 클라이언트와 서버의 간격을 없애기 위해 만들어짐  
 : Rhino, SpiderMonkey, V8 같은 독립적인 자바스크립트 엔진으로 실행  
 
-
 ```
   JS code 
 -----------
-  JS Runtime
-  - JS engine (ex. V8)
+  JS Runtime (ex. node)
+  - JS engine (ex. v8)
   - Runtime API
   - ... 
 ```
@@ -59,9 +59,10 @@ Server Side JavaScript
 : 자바스크립트로 작성된 코드를 자바 객체에 전달    
 
 
-**SSJS Solution**  
-- mongoDB
-- couchDB
+**SSJS Solution**
+- PostgreSQL (V8)
+- SpiderMonkey (SpiderMonkey)
+- CouchDB (SpiderMonkey)
 - ...
 
 
@@ -75,9 +76,9 @@ https://en.wikipedia.org/wiki/List_of_server-side_JavaScript_implementations
 
 런타임 | 엔진 | 언어 | 출시
 ---|---|---|--- 
-node | v8 | c++  | 2009, Ryan Dahl
-deno | v8 | rust | 2020, Ryan Dahl
-bun  | JavaScriptCore | zig | 2022, Jarred Sumner
+Node | v8 | c++  | 2009, Ryan Dahl
+Deno | v8 | rust | 2020, Ryan Dahl
+Bun  | JavaScriptCore | zig | 2022, Jarred Sumner
 
 
 
