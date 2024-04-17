@@ -1,13 +1,14 @@
-//import './style.css'
+import './assets/style.css'
 
 export const metadata = {
-  title: 'zzzz'
+  title: 'title',
+  lang: 'ko',
 };
 
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body>{children}</body>
     </html>
   )
