@@ -6,7 +6,8 @@
 : 리액트가 소문자로 시작하는 컴포넌트는 DOM 엘리먼트로 인식하므로 컴포넌트 이름은 대문자로 시작해야함  
 
 - [React Element](#react-component)
-- [React Component Type](#react-component-type)
+- Component State
+- Component Type
   - [Functional Component](#functional-component)
   - [Class Component](#class-component)
 
@@ -75,12 +76,17 @@ const element = React.createElement(
 
 
 
-## React Component Type
+## Component State
+: 컴포넌트의 현재 상태 정보를 갖고 있는 속성  
+: 상태를 통해 컴포넌트의 작동 방식을 결정(상태가 변경되면 UI 업데이트)  
+: 상태에 직접 접근하지 않고 setState 메서드를 통해 관리  
+: 상태가 없는 컴포넌트를 Stateless Component라고 함  
 
-### Functional Component
+
+
+## Functional Component
 : 리액트 엘리먼트를 반환하는 함수  
 : 16.8 버전부터 추가된 hook을 통해 라이프 사이클과 상태를 관리할 수 있음  
-
 
 ```js
 function MyComponent(props) {
@@ -100,23 +106,24 @@ const App = () => {
 }
 ```
 
+
 **hook**
 ```js
 import React, { useState, useEffect } from 'react'
 
 const MyComponent = () => {
 
-  const [key, setKey] = useState(0);
+  const [key, setKey] = useState('value');
 
   useEffect(() => {
-    console.log('useEffect');
+    console.log('update');
     return;
   });
 
   return(
     <div>
       <p>{key}</p>
-      <button onClick={() => setKey(key + 1)}>button</button>
+      <button onClick={() => setKey(key + key)}>button</button>
     </div>
   );
 }
@@ -142,8 +149,8 @@ const MyComponent: React.FC = () => {
 
 
 
-### Class Component 
-: 렌더링 메서드에서 리액트 노드를 반환하는 클래스  
+## Class Component 
+: Component를 확장하고 렌더링 메서드에서 리액트 노드를 반환하는 클래스  
 
 - React.Component
 - React.PureComponent
@@ -152,17 +159,15 @@ const MyComponent: React.FC = () => {
 import React, { Component } from 'react'
 
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      key: 'value',
-    };
 
-    fnClick = () => {
-      this.setState({ key: this.state.key + 1 });
-    }
+  state = { 
+    key: 'value',
+  };
+
+  fnClick = () => {
+    this.setState({ key: this.state.key + this.state.key });
   }
-
+  
   render() {
     return (
       <div>
@@ -177,6 +182,7 @@ class MyComponent extends React.Component {
 
 **PureComponent**  
 : 상위 컴포넌트가 렌더링되면 하위 컴포넌트도 같이 렌더링되는 단점을 보완하기 위해 도입  
+: PureComponent를 구현한 컴포넌트는 props과 state의 변경 사항이 없으면 렌더링하지 않음  
 
 
 **typescript**  
